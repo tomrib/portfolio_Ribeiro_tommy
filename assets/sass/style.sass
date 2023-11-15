@@ -1,0 +1,135 @@
+*
+    margin: 0
+    padding: 0
+
+@font-face
+    font-family: "Stay Classy"
+    src: url(../font/Stay\ Classy\ SLDT.otf), url(../font/Stay\ Classy\ SLDT.ttf)
+
+$bgc: #191919
+$color: #f6f6f6
+$decoColor: #2fff00
+
+$header_height: 60px
+
+/* Barre de défilement verticale */
+::-webkit-scrollbar
+    width: 7px
+     /* Largeur de la barre de défilement */
+
+/* Curseur de la barre de défilement */
+::-webkit-scrollbar-thumb
+    background: $decoColor
+    /* Couleur de fond du curseur */
+    border-radius: 5px
+    /* Bordure arrondie du curseur */
+
+/* Barre de défilement de fond */
+::-webkit-scrollbar-track
+    background: rgba(0, 0, 0, 0)
+/* Barre de défilement horizontale */
+::-webkit-scrollbar-horizontal
+    height: 10px
+    /* Hauteur de la barre de défilement horizontale */
+
+/* Curseur de la barre de défilement horizontale */
+::-webkit-scrollbar-thumb:horizontal
+    background: $decoColor
+    /* Couleur de fond du curseur horizontal */
+
+/* Barre de défilement de fond horizontale */
+::-webkit-scrollbar-track:horizontal
+    background: rgba(0, 0, 0, 0)
+    /* Couleur de fond de la barre de défilement horizontale */
+
+.material-symbols-outlined
+    font-size: 24px
+
+body
+    background-color: $bgc
+    color: $color
+    font-family: 'Courier New', Courier, monospace
+.navBar
+    top: 0
+    width: 100%
+    height: 40px
+    background-color: $color
+    display: flex
+    align-items: center
+    justify-content: end
+    border-bottom: 1px solid $color
+    position: fixed
+    a
+        color: #000
+        text-decoration: none
+        position: relative
+        margin: 0 20px
+        &::before
+            content: ""
+            position: absolute
+            left: 0
+            bottom: 0
+            width: 0
+            height: 2px
+            background-color: $decoColor
+            transition: width 0.3s ease-in-out
+        &:hover::before
+            width: 100%
+
+.heater
+    margin-top: 165px
+    height: calc(100vh - (#{$header_height} ))
+    /* Styles pour la classe "displayHeater" à l'intérieur de "heater" */
+    .displayHeater
+        width: 100%
+        display: flex
+        /* Styles pour la classe "positionItem" à l'intérieur de "displayHeater" */
+        .positionItem
+            margin: auto
+            h1
+                font-family: "Stay Classy", sans-serif, serif
+                font-size: 120px
+            p
+                font-size: 25px
+                text-align: center
+                border-top: 1px solid $decoColor
+                padding-top: 10px
+            .displayItem
+                text-align-last: justify
+                margin: 150px 50px 0px 50px
+            .itemIcon
+                width: 35px
+.displayMe
+    display: flex
+    margin-bottom: 150px
+    div
+        width: 50%
+        h2
+            margin-top: 30px
+            text-align: center
+            margin-bottom: 50px
+        p
+            justify-items: center
+            margin: 50px 100px
+        img
+            margin-left: 20%
+            border-radius: 5px
+            box-shadow: 1.5px 2px 3px $decoColor
+.titleLanguage
+    text-align: center
+.displayLanguage
+    display: flex
+    width: 1000px
+    margin: 0 auto
+    flex-wrap: wrap
+    align-items: center
+    justify-content: center
+    .borderIcon
+        width: 150px
+        height: 150px
+        margin: 50px
+        border-radius: 10px
+        display: flex
+        align-items: center
+        justify-content: center
+        box-shadow: $decoColor 0px 0px 10px 0px inset
