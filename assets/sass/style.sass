@@ -6,7 +6,7 @@
     font-family: "Stay Classy"
     src: url(../font/Stay\ Classy\ SLDT.otf), url(../font/Stay\ Classy\ SLDT.ttf)
 
-$bgc: #191919
+$bgc: #313131
 $color: #f6f6f6
 $decoColor: #2fff00
 
@@ -59,6 +59,7 @@ body
     justify-content: end
     border-bottom: 1px solid $color
     position: fixed
+    z-index: 50
     a
         color: #000
         text-decoration: none
@@ -115,21 +116,59 @@ body
             margin-left: 20%
             border-radius: 5px
             box-shadow: 1.5px 2px 3px $decoColor
-.titleLanguage
-    text-align: center
-.displayLanguage
+
+.container
+    width: 60%
+    max-width: 1400px
+    margin: auto
+
+.cardContainer
     display: flex
-    width: 1000px
+    margin: 50px 0 100px 0
+
+.titleLanguage
+    margin-left: 60px
+    text-align: center
+    padding-bottom: 20px
+
+.cardWrapper
     margin: 0 auto
-    flex-wrap: wrap
+    position: relative
+    min-height: 150px
+    perspective: 1000px
+    perspective-origin: top
+    &:hover
+        .card
+            transform: rotateY(180deg)
+
+.card
+    position: relative
+    width: 100px
+    height: 100px
+    transform-style: preserve-3d
+    transition: transform 1s cubic-bezier(0.86, 1, 0.09, 1)
+    transform-origin: center
+
+.side
+    position: absolute
+    height: 100%
+    width: 100%
+    padding: 35px
+    border-radius: 8px
+    backface-visibility: hidden
+    -webkit-backface-visibility: hidden
+
+.cardFront, .cardBack
+    width: 100%
+    height: 100%
+    display: flex
+    flex-direction: column
+    justify-content: space-between
     align-items: center
-    justify-content: center
-    .borderIcon
-        width: 150px
-        height: 150px
-        margin: 50px
-        border-radius: 10px
-        display: flex
-        align-items: center
-        justify-content: center
-        box-shadow: $decoColor 0px 0px 10px 0px inset
+    box-shadow: $decoColor 0px 0px 10px 0px inset
+
+.cardBack
+    transform: rotateY(180deg)
+    top: 0
+    right: 6px
+    margin-left: 30px

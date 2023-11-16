@@ -50,7 +50,7 @@
 }
 
 body {
-  background-color: #191919;
+  background-color: #313131;
   color: #f6f6f6;
   font-family: "Courier New", Courier, monospace;
 }
@@ -65,6 +65,7 @@ body {
   justify-content: end;
   border-bottom: 1px solid #f6f6f6;
   position: fixed;
+  z-index: 50;
 }
 .navBar a {
   color: #000;
@@ -139,25 +140,66 @@ body {
   box-shadow: 1.5px 2px 3px #2fff00;
 }
 
-.titleLanguage {
-  text-align: center;
+.container {
+  width: 60%;
+  max-width: 1400px;
+  margin: auto;
 }
 
-.displayLanguage {
+.cardContainer {
   display: flex;
-  width: 1000px;
-  margin: 0 auto;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
+  margin: 50px 0 100px 0;
 }
-.displayLanguage .borderIcon {
-  width: 150px;
-  height: 150px;
-  margin: 50px;
-  border-radius: 10px;
+
+.titleLanguage {
+  margin-left: 60px;
+  text-align: center;
+  padding-bottom: 20px;
+}
+
+.cardWrapper {
+  margin: 0 auto;
+  position: relative;
+  min-height: 150px;
+  perspective: 1000px;
+  perspective-origin: top;
+}
+.cardWrapper:hover .card {
+  transform: rotateY(180deg);
+}
+
+.card {
+  position: relative;
+  width: 100px;
+  height: 100px;
+  transform-style: preserve-3d;
+  transition: transform 1s cubic-bezier(0.86, 1, 0.09, 1);
+  transform-origin: center;
+}
+
+.side {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  padding: 35px;
+  border-radius: 8px;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+.cardFront, .cardBack {
+  width: 100%;
+  height: 100%;
   display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   align-items: center;
-  justify-content: center;
   box-shadow: #2fff00 0px 0px 10px 0px inset;
+}
+
+.cardBack {
+  transform: rotateY(180deg);
+  top: 0;
+  right: 6px;
+  margin-left: 30px;
 }/*# sourceMappingURL=style.css.map */
